@@ -1,0 +1,107 @@
+#[[plugins]]
+#repo = 'Shougo/deoplete.nvim'
+#on_event = 'InsertEnter'
+#hook_add = '''
+#  source ~/.vim/plugins/deoplete.vim
+#  let g:deoplete#enable_at_startup = 1
+#'''
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+    source ~/.vim/plugins/nerdtree.vim
+'''
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ['html']
+
+[[plugins]]
+repo = 'elzr/vim-json'
+on_ft = ['json']
+
+[[plugins]]
+repo = 'posva/vim-vue'
+on_ft = ['vue']
+
+[[plugins]]
+repo = 'jparise/vim-graphql'
+on_ft = ['javascript', 'javascriptreact']
+
+[[plugins]]
+repo = 'ryanolsonx/vim-lsp-javascript'
+on_ft = ['javascript', 'javascriptreact']
+hook_add = '''
+if executable('typescript-language-server')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'javascript support using typescript-language-server',
+        \ 'cmd': { server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+        \ 'root_uri': { server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_directory(lsp#utils#get_buffer_path(), '.git/..'))},
+        \ 'whitelist': ['javascript', 'javascript.jsx', 'javascriptreact']
+    \ })
+end
+'''
+
+[[plugins]]
+repo = 'udalov/kotlin-vim'
+on_ft = ['kotlin']
+
+[[plugins]]
+repo = 'hashivim/vim-terraform'
+on_ft = ['terraform']
+
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+on_ft = ['python']
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = ['go']
+hook_add = '''
+    let g:go_gopls_enabled = 0
+    let g:go_fmt_command = "goimports"
+    let g:go_def_mapping_enabled = 0
+    let g:go_doc_keywordprg_enabled = 0
+'''
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+build = 'cargo install rustfmt'
+on_ft = ['rust']
+hook_add = '''
+    let g:rustfmt_autosave = 1
+    let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
+'''
+
+[[plugins]]
+repo = 'racer-rust/vim-racer'
+build = 'cargo install racer'
+on_ft = ['rust']
+
+[[plugins]]
+repo = 'rcmdnk/vim-markdown'
+on_ft = ['markdown']
+hook_source = '''
+    let g:vim_markdown_folding_disabled = 1
+'''
+
+#[[plugins]]
+#repo = 'kannokanno/previm'
+#depends = ['open-browser.vim']
+#on_ft = ['markdown']
+#hook_source = ''' " {{{
+#    let g:previm_enable_realtime = 1
+#'''
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
+
+[[plugins]]
+repo = 'chase/vim-ansible-yaml'
+on_ft = ['yaml']
+
+[[plugins]]
+repo = 'sudar/vim-arduino-syntax'
+on_ft = ['arduino']
+

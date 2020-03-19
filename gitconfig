@@ -1,0 +1,36 @@
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore_global
+
+[user]
+	email = gonsuke@users.noreply.github.com
+	name = Takashi Matsuno
+
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	rb = rebase
+	pl = pull
+	ps = push
+	l = log --oneline
+	lo = log
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	delete-merged = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|develop|master'|xargs git branch -d; git fetch --prune; }; f"
+
+#[url "git@github.com:"]
+#	insteadOf = "https://github.com/"
+#	insteadOf = "g:" # abbreviated prefix e.g. `git clone g:user_name/repository_name.git`
+
+#[url "https://github.com/"]
+#	insteadOf = "git@github.com:"
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[pager]
+	branch = cat

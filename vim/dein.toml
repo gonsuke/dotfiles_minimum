@@ -1,0 +1,119 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'tpope/vim-endwise'
+
+[[plugins]]
+repo = 'Townk/vim-autoclose'
+
+[[plugins]]
+repo = 'joshdick/onedark.vim'
+hook_add = '''
+    colorscheme onedark
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+hook_add = '''
+    let g:airline_powerline_fonts = 1
+'''
+depends = ['vim-airline-themes']
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+hook_add = '''
+    let g:airline_theme='onedark'
+'''
+
+#[[plugins]]
+#repo = 'AlessandroYorba/Sierra'
+#hook_add = '''
+#  let g:sierra_Twilight = 1
+#  colorscheme sierra
+#'''
+
+[[plugins]]
+repo = 'w0rp/ale'
+hook_add = '''
+    let g:ale_fixers = {
+    \    'javascript': ['prettier', 'eslint'],
+    \    'typescript': ['prettier', 'tslint']
+    \ }
+    let g:ale_fix_on_save = 1
+    let g:ale_javascript_prettier_use_local_config = 1
+'''
+
+[[plugins]]
+repo = 'tyru/caw.vim'
+hook_add = '''
+    nmap <Leader>c <Plug>(caw:i:toggle)
+    vmap <Leader>c <Plug>(caw:i:toggle)
+'''
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = '''
+    source ~/.vim/plugins/gitgutter.vim
+'''
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+hook_add = '''
+    source ~/.vim/plugins/fugitive.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+hook_add = '''
+    source ~/.vim/plugins/denite.vim
+'''
+
+[[plugins]]
+repo = 'osyo-manga/vim-anzu'
+hook_add = '''
+    source ~/.vim/plugins/anzu.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_event = 'InsertEnter'
+hook_add = '''
+    let g:deoplete#enable_at_startup = 1
+'''
+
+[[plugins]]
+repo = 'prabirshrestha/async.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+
+[[plugins]]
+repo = 'junegunn/fzf'
+hook_post_update = './install --all'
+merged = 0
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+hook_add = '''
+    command! -bang -nargs=* Rg
+    \ call fzf#vim#grep(
+    \ 'rg --column --line-number --hidden --ignore-case --no-heading --color=always '.shellescape(<q-args>), 1,
+    \ <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+    \ : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
+    \ <bang>0)
+    nnoremap <C-g> :Rg<Space>
+    nnoremap <C-p> :GFiles<CR>
+    nnoremap <C-h> :History<CR>
+'''
+
