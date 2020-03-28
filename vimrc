@@ -114,7 +114,7 @@ augroup FileTypeCustomize
     autocmd BufNewFile,BufRead *.tfstate set filetype=json
     autocmd BufNewFile,BufRead *.md set filetype=markdown
     autocmd FileType sql set sw=2 ts=2 et
-    autocmd FileType xml,yaml,eruby,scss,ruby,java,kotlin set sw=2 ts=2 et
+    autocmd FileType xml,yaml,eruby,scss,ruby set sw=2 ts=2 et
     autocmd FileType rst set sw=3 ts=3 et
     autocmd FileType python,css,coffee,haskell,php,sh,make,html,terraform,javascript set sw=4 ts=4 et
     autocmd FileType vim set foldmarker={{{,}}}

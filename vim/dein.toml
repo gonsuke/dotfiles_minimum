@@ -38,10 +38,12 @@ repo = 'w0rp/ale'
 hook_add = '''
     let g:ale_fixers = {
     \    'javascript': ['prettier', 'eslint'],
-    \    'typescript': ['prettier', 'tslint']
+    \    'typescript': ['prettier', 'tslint'],
+    \    'kotlin': ['ktlint']
     \ }
     let g:ale_fix_on_save = 1
     let g:ale_javascript_prettier_use_local_config = 1
+    let g:ale_kotlin_ktlint_options = '--experimental'
 '''
 
 [[plugins]]
