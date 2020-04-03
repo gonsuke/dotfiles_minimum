@@ -29,7 +29,7 @@ ulimit -n 8192
 
 export LANG=ja_JP.UTF-8
 export WORDCHARS='*?_[]~=&;!#$%^(){}<>'
-export LESS=' -R'
+export LESS=' -qR'
 export LESSCHARSET=utf-8
 export LESSOPEN='| src-hilite-lesspipe.sh %s'
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
