@@ -36,7 +36,7 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 export FZF_DEFAULT_OPTS='--height 30% --border'
 
 if [ `uname` = "Darwin" ]; then
-    export PATH=$HOME/bin:/opt/local/bin:/opt/local/sbin:/opt/local/lib/mysql57/bin:/opt/local/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH
+    export PATH=$HOME/bin:/opt/local/bin:/opt/local/sbin:/opt/local/lib/mysql57/bin:/opt/local/Library/Frameworks/Python.framework/Versions/3.8/bin:/opt/local/libexec/llvm-9.0/bin:$HOME/.pub-cache/bin:$PATH
     export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/A/Commands/java_home`
 fi
 export PATH=${JAVA_HOME}/bin:${PATH}
@@ -216,12 +216,12 @@ zinit creinstall %HOME/my_completions
 
 zplugin ice depth=1; zplugin light romkatv/powerlevel10k
 
-if [ -f /opt/local/bin/virtualenvwrapper.sh-3.6 ]; then
-    export VIRTUALENVWRAPPER_PYTHON='/opt/local/bin/python3.6'
-    export VIRTUALENVWRAPPER_VIRTUALENV='/opt/local/bin/virtualenv-3.6'
-    export VIRTUALENVWRAPPER_VIRTUALENV_CLONE='/opt/local/bin/virtualenv-clone-3.6'
+if [ -f /opt/local/bin/virtualenvwrapper.sh-3.8 ]; then
+    export VIRTUALENVWRAPPER_PYTHON='/opt/local/bin/python3.8'
+    export VIRTUALENVWRAPPER_VIRTUALENV='/opt/local/bin/virtualenv-3.8'
+    export VIRTUALENVWRAPPER_VIRTUALENV_CLONE='/opt/local/bin/virtualenv-clone-3.8'
     export WORKON_HOME=$HOME/.virtualenvs
-    source /opt/local/bin/virtualenvwrapper.sh-3.6
+    source /opt/local/bin/virtualenvwrapper.sh-3.8
 elif [ -f /bin/virtualenvwrapper.sh ]; then
     export VIRTUALENVWRAPPER_PYTHON='/bin/python'
     export VIRTUALENVWRAPPER_VIRTUALENV='/bin/virtualenv'
@@ -249,7 +249,7 @@ fi
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 
 # Flutter
-[[ -d ~/Downloads/flutter ]] && export PATH=$PATH:~/Downloads/flutter/bin
+[[ -d ~/Downloads/flutter ]] && export PATH=$PATH:~/Downloads/flutter/bin:~/Downloads/flutter/bin/cache/dart-sdk/bin
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
