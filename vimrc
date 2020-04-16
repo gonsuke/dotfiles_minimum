@@ -113,10 +113,12 @@ augroup FileTypeCustomize
     autocmd BufNewFile,BufRead *.tf set filetype=terraform
     autocmd BufNewFile,BufRead *.tfstate set filetype=json
     autocmd BufNewFile,BufRead *.md set filetype=markdown
+    autocmd BufNewFile,BufRead Makefile set filetype=make
     autocmd FileType sql set sw=2 ts=2 et
     autocmd FileType xml,yaml,eruby,scss,ruby set sw=2 ts=2 et
     autocmd FileType rst set sw=3 ts=3 et
-    autocmd FileType python,css,coffee,haskell,php,sh,make,html,terraform,javascript set sw=4 ts=4 et
+    autocmd FileType python,css,coffee,haskell,php,sh,html,terraform,javascript set sw=4 ts=4 et
+    autocmd FileType make set softtabstop=0 noexpandtab
     autocmd FileType vim set foldmarker={{{,}}}
     autocmd FileType vim let g:vim_indent_cont = 0
     autocmd FileType python set nosi
