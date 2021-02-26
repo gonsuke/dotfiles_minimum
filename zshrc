@@ -31,14 +31,19 @@ export LANG=ja_JP.UTF-8
 export WORDCHARS='*?_[]~=&;!#$%^(){}<>'
 export LESS=' -qR'
 export LESSCHARSET=utf-8
-export LESSOPEN='| src-hilite-lesspipe.sh %s'
+export LESSOPEN='| source-highlight-esc.sh %s'
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 export FZF_DEFAULT_OPTS='--height 30% --border'
 
 if [ `uname` = "Darwin" ]; then
     export PATH=$HOME/bin:/opt/local/bin:/opt/local/sbin:/opt/local/lib/mysql57/bin:/opt/local/Library/Frameworks/Python.framework/Versions/3.8/bin:/opt/local/libexec/llvm-9.0/bin:$HOME/.pub-cache/bin:$PATH
     export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/A/Commands/java_home`
+else
+    export AWS_VAULT_PASS_PREFIX=aws-vault
+    export AWS_SESSION_TOKEN_TTL=8h
+    export GPG_TTY=$(tty)
 fi
+
 export PATH=${JAVA_HOME}/bin:${PATH}
 export PATH=$PATH:$HOME/go/bin:$HOME/.rvm/bin:$HOME/.nodebrew/current/bin:$HOME/.npm-global/bin:$HOME/.cargo/bin
 
