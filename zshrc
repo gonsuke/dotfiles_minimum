@@ -192,7 +192,7 @@ zinit load zdharma/history-search-multi-word
 # Binary release in archive, from GitHub-releases page.
 # After automatic unpacking it provides program "fzf".
 zinit ice from"gh-r" as"program"
-zinit load junegunn/fzf-bin
+zinit load junegunn/fzf
 
 # One other binary release, it needs renaming from `docker-compose-Linux-x86_64`.
 # This is done by ice-mod `mv'{from} -> {to}'. There are multiple packages per
