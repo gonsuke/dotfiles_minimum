@@ -39,11 +39,17 @@ hook_add = '''
     let g:ale_fixers = {
     \    'javascript': ['prettier', 'eslint'],
     \    'typescript': ['prettier', 'tslint'],
-    \    'kotlin': ['ktlint']
+    \    'kotlin': ['ktlint'],
+    \    'python': ['autopep8', 'isort'],
     \ }
     let g:ale_fix_on_save = 1
     let g:ale_javascript_prettier_use_local_config = 1
     let g:ale_kotlin_ktlint_options = '--experimental'
+    let g:ale_lint_on_text_changed = 0
+    let g:ale_linters = {
+      \ 'javascript': ['eslint'],
+      \ 'python': ['pylint']
+    \ }
 '''
 
 [[plugins]]
@@ -75,13 +81,6 @@ hook_add = '''
 repo = 'osyo-manga/vim-anzu'
 hook_add = '''
     source ~/.vim/plugins/anzu.vim
-'''
-
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-on_event = 'InsertEnter'
-hook_add = '''
-    let g:deoplete#enable_at_startup = 1
 '''
 
 [[plugins]]
