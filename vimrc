@@ -43,9 +43,11 @@ nnoremap s= <C-w>=
 noremap so <C-w>_<C-w>|
 
 " Tab
-nnoremap st :<C-u>tabnew<CR>
-nnoremap sn gt
-nnoremap sp gT
+nnoremap tt :<C-u>tabnew<CR>
+nnoremap tn gt
+nnoremap tp gT
+nnoremap tq :<c-u>tabclose<cr>
+nnoremap ts :<c-u>tabs<cr>
 
 " emacs like keymaps for input mode
 imap <C-p> <Up>
@@ -66,6 +68,24 @@ nnoremap gD :<C-u>LspImplementation<CR>
 nnoremap <c-k> :<C-u>LspSignatureHelp<CR>
 nnoremap <LocalLeader>R :<C-u>LspRename<CR>
 nnoremap <LocalLeader>n :<C-u>LspReferences<CR>
+nnoremap gt :tab split<cr>:LspDefinition<cr>
+nnoremap gs :sp<cr>:LspDefinition<cr>
+nnoremap gv :vsp<cr>:LspDefinition<cr>
+
+" mapping for register
+vnoremap d "dd
+nnoremap d "dd
+vnoremap D "dD
+nnoremap D "dD
+vnoremap x "dx
+nnoremap x "dx
+vnoremap s "ds
+nnoremap s "ds
+
+" nnoremap t d
+" vnoremap t x
+" nnoremap tt dd
+" nnoremap T D
 
 if !has('nvim')
     pythonx import neovim
@@ -114,6 +134,9 @@ augroup FileTypeCustomize
     autocmd BufNewFile,BufRead *.tfstate set filetype=json
     autocmd BufNewFile,BufRead *.md set filetype=markdown
     autocmd BufNewFile,BufRead Makefile set filetype=make
+    autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+    autocmd BufNewFile,BufRead *.yaml set filetype=ansible
+    autocmd BufNewFile,BufRead *.yml set filetype=ansible
     autocmd FileType sql set sw=2 ts=2 et
     autocmd FileType xml,yaml,eruby,scss,ruby set sw=2 ts=2 et
     autocmd FileType rst set sw=3 ts=3 et
