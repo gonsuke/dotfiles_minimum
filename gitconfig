@@ -5,6 +5,10 @@
 [user]
 	email = gonsuke@users.noreply.github.com
 	name = Takashi Matsuno
+	signingkey = 87BBE842988924B2
+
+[includeIf "gitdir:~/Documents/projects/zettify/"]
+    path = ~/.gitconfig-zettify
 
 [alias]
 	co = checkout
@@ -31,6 +35,10 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+[commit]
+	template = ~/.gitcommit_template
+	gpgsign = true
 
 [pager]
 	branch = cat
